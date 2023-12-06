@@ -1,0 +1,15 @@
+<!-- src/app/dog-list/dog-list.component.html -->
+
+<div>
+  <label for="breed">Select a breed:</label>
+  <select id="breed" [(ngModel)]="selectedBreed">
+    <option *ngFor="let breed of breeds" [value]="breed">{{ breed }}</option>
+  </select>
+  <button (click)="loadImages()">Load Images</button>
+</div>
+
+<div *ngIf="images.length > 0">
+  <div *ngFor="let image of images">
+    <img [src]="image" alt="Dog Image" />
+  </div>
+</div>
